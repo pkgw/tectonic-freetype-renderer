@@ -1,3 +1,5 @@
 config.mk
 objs/vc2010/
 /.ttfb_container_id
+/tectonic_api.js
+/tectonic_api.wasm

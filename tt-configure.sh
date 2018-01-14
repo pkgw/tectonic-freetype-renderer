@@ -23,4 +23,6 @@ if [ "$is_running" != "true" ] ; then
     docker start $cont_name
 fi
 
-docker exec $cont_name bash -c "./autogen.sh && emconfigure ./configure && chown -R \$HOST_UID:\$HOST_GID ."
+docker exec $cont_name bash -c "./autogen.sh \
+  && emconfigure ./configure \
+  && chown -R \$HOST_UID:\$HOST_GID ."

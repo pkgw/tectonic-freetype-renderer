@@ -20,4 +20,6 @@ if [ "$is_running" != "true" ] ; then
     docker start $cont_name
 fi
 
-docker exec $cont_name bash -c "emmake make && chown -R \$HOST_UID:\$HOST_GID ."
+docker exec $cont_name bash -c "emmake make \
+  && emcc -O2 -o tectonic_api.js -s WASM=1 -Ibuilds/unix -Iinclude tectonic_api.c objs/.libs/libfreetype.a \
+  && chown -R \$HOST_UID:\$HOST_GID ."
