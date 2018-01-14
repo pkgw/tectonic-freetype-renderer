@@ -14,6 +14,40 @@ The changes from upstream FreeType are minimal, but of course this repository
 has no official associated with FreeType.
 
 
+## Building
+
+For simplicity and reproducibility, the Web-executable build is created inside
+a [Docker](https://www.docker.com/community-edition) container. The first step
+is to create the builder image, which is derived from
+[trzeci/emscripten-slim](https://hub.docker.com/r/trzeci/emscripten-slim/).
+You can do this by running:
+
+```
+./tt-create-builder.sh
+```
+
+which will generate an image named `ttfontbuilder:latest`.
+
+
+## Updating
+
+This fork derives from the upstream FreeType git repository:
+
+```
+git://git.sv.nongnu.org/freetype/freetype2.git
+```
+
+It currently derives from the 2.9 release, tag `VER-2-9`. Git can show you the
+list of commits made in this fork relative to upstream:
+
+```
+git log VER-2-9..HEAD
+```
+
+The intention is to merge in updates to the underlying codebase as upstream
+releases are made.
+
+
 ## License and copyright
 
 The bulk of the code in this repository belongs to the FreeType project and is
