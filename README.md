@@ -28,6 +28,27 @@ You can do this by running:
 
 which will generate an image named `ttfontbuilder:latest`.
 
+Next, initialize a container that will build the source:
+
+```
+./tt-configure.sh
+```
+
+Finally, to actually build the outputs, run:
+
+```
+./tt-build.sh
+```
+
+The `tt-build.sh` command can be run repeatedly and will rebuild the outputs
+as you edit the source.
+
+The builder container can be destroyed by running:
+
+```
+./tt-teardown.sh
+```
+
 
 ## Updating
 
