@@ -34,6 +34,9 @@ AC_PROG_CC
 AC_PROG_CPP
 AC_SUBST(EXEEXT)
 
+echo "overriding cross-compilation configuration for Emscripten"
+cross_compiling=yes
+
 PKG_PROG_PKG_CONFIG([0.24])
 
 LT_INIT(win32-dll)
